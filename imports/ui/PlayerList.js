@@ -4,16 +4,22 @@ import {Players} from './../api/players';
 
 export default class PlayerList extends React.Component {
   renderPlayers(listOfPlayers) {
-    return newPlayerList = listOfPlayers.map((player) => {
+    if(listOfPlayers.length < 1) {
       return (
-      <Player
-        key={player._id}
-        id={player._id}
-        name={player.name}
-        score={player.score}
-      />
+        <h3>Please add a candidate to vote for.</h3>
       )
-    })
+    } else {
+      return newPlayerList = listOfPlayers.map((player) => {
+        return (
+        <Player
+          key={player._id}
+          id={player._id}
+          name={player.name}
+          score={player.score}
+        />
+        )
+      })
+    }
   }
 
   render() {
