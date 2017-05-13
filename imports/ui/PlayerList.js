@@ -1,0 +1,27 @@
+import React from 'react';
+import Player from './Player'
+import {Players} from './../api/players';
+
+export default class PlayerList extends React.Component {
+  renderPlayers(listOfPlayers) {
+    return newPlayerList = listOfPlayers.map((player) => {
+      return (
+      <Player
+        key={player._id}
+        id={player._id}
+        name={player.name}
+        score={player.score}
+      />
+      )
+    })
+  }
+
+  render() {
+    let players = Players.find().fetch()
+    return (
+      <div>
+        {this.renderPlayers(players)}
+      </div>
+    )
+  }
+}

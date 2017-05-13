@@ -7,7 +7,7 @@ export default class TitleBar extends React.Component {
     return (
       <div>
         <h1>{title}</h1>
-        
+        <h4>{tagline}</h4>
       </div>
     );
   }
