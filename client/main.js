@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
-import {Tracker} from 'meteor/tracker'
+import {Tracker} from 'meteor/tracker';
 import {Players} from './../imports/api/players';
+import TitleBar from './../imports/ui/TitleBar';
+import AddPlayer from './../imports/ui/AddPlayer';
 
 const renderPlayers = (listOfPlayers) => {
   return newPlayerList = listOfPlayers.map((player) => {
@@ -35,30 +37,16 @@ const renderPlayers = (listOfPlayers) => {
   })
 };
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  let playerName = event.target.playerName.value;
-  if (playerName) {
-    event.target.playerName.value = " ";
-    Players.insert({name: playerName, score: 0})
-  }
-}
 Meteor.startup(() => {
   Tracker.autorun(() => {
     let players = Players.find().fetch()
-    let title = "Vote Tracker";
-    let name = "Nate";
     let jsx = (
       <div>
-        <h1>{title}</h1>
-        <p>Hello, {name}!</p>
-        <p>This is another p element.</p>
-        {renderPlayers(players).sort()}
-
-        <form onSubmit={handleSubmit}>
-          <input type='text' name='playerName' placeholder="Add Candidate"/>
-          <button>Add Candidate</button>
-        </form>
+        <TitleBar
+          title='Voter App'
+          tagline='Vote for your favorite people!'/>
+        {renderPlayers(players)}
+        <AddPlayer/>
       </div>
     )
     ReactDOM.render(jsx, document.getElementById('app'))
