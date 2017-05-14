@@ -23,7 +23,7 @@ export default class PlayerList extends React.Component {
   }
 
   render() {
-    let players = Players.find().fetch()
+    let players = Players.find({}, { sort: {score: -1} }).fetch()
     return (
       <div>
         {this.renderPlayers(players)}
