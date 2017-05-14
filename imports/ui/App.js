@@ -8,8 +8,10 @@ export default class App extends React.Component {
     return (
       <div>
         <TitleBar title='Voter App'/>
-        <PlayerList/>
-        <AddPlayer/>
+        <div className='wrapper'>
+          <PlayerList/>
+          <AddPlayer/>
+        </div>
       </div>
     )
   }
