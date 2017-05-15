@@ -4,8 +4,10 @@ import {Players} from './../api/players';
 export default class Player extends React.Component {
   render() {
     return (
-      <p key={this.props.id}>
-        {this.props.name} has a score of {this.props.score}
+      <div className='item' key={this.props.id}>
+        <p>
+          {this.props.name} has a score of {this.props.score}
+        </p>
         <button onClick={() => {
           Players.update({
             _id: this.props.id
@@ -27,7 +29,7 @@ export default class Player extends React.Component {
         <button onClick={() => {
           Players.remove({_id: this.props.id})
         }}>x</button>
-      </p>
+    </div>
     )
   }
 }

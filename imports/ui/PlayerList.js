@@ -6,7 +6,9 @@ export default class PlayerList extends React.Component {
   renderPlayers(listOfPlayers) {
     if(listOfPlayers.length < 1) {
       return (
-        <h3>Please add a candidate to vote for.</h3>
+        <div className='item'>
+          <h3>Please add a candidate to vote for.</h3>
+        </div>
       )
     } else {
       return newPlayerList = listOfPlayers.map((player) => {
