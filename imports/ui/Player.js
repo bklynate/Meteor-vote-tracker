@@ -8,7 +8,7 @@ export default class Player extends React.Component {
         <p>
           {this.props.name} has a score of {this.props.score}
         </p>
-        <button onClick={() => {
+        <button className='button button--round' onClick={() => {
           Players.update({
             _id: this.props.id
           }, {
@@ -17,7 +17,7 @@ export default class Player extends React.Component {
             }
           })
         }}>+1</button>
-        <button onClick={() => {
+      <button className='button button--round' onClick={() => {
           Players.update({
             _id: this.props.id
           }, {
@@ -26,7 +26,7 @@ export default class Player extends React.Component {
             }
           })
         }}>-1</button>
-        <button onClick={() => {
+      <button className='button button--round' onClick={() => {
           Players.remove({_id: this.props.id})
         }}>x</button>
     </div>

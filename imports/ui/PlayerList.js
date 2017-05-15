@@ -7,7 +7,7 @@ export default class PlayerList extends React.Component {
     if(listOfPlayers.length < 1) {
       return (
         <div className='item'>
-          <h3>Please add a candidate to vote for.</h3>
+          <h3 className='item__message'>Please add a candidate to vote for.</h3>
         </div>
       )
     } else {
