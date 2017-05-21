@@ -1,6 +1,7 @@
 import React from 'react';
 import Player from './Player'
 import {Players} from './../api/players';
+import FlipMove from 'react-flip-move';
 
 export default class PlayerList extends React.Component {
   renderPlayers(listOfPlayers) {
@@ -27,9 +28,9 @@ export default class PlayerList extends React.Component {
   render() {
     let players = Players.find({}, { sort: {score: -1} }).fetch()
     return (
-      <div>
+      <FlipMove maintainContainerHeight={true}>
         {this.renderPlayers(players)}
-      </div>
+      </FlipMove>
     )
   }
 }
