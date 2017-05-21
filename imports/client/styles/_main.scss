@@ -6,14 +6,14 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // makes the base font-size 10px
 }
 
 body {
   background-color: #f2f2f2;
   color: #555;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.6rem; // this would equal 16px
 }
 
 h1 {
@@ -21,8 +21,18 @@ h1 {
   font-size: 2.4rem;
 }
 
+input, button, select {
+  font-size: 1.3rem;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 50rem;
   padding: 1.3rem;
 }
+
+@import './components/titlebar.scss';
+@import './components/item.scss';
+@import './components/button.scss';
+@import './components/player.scss';
+@import './components/form.scss';
