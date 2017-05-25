@@ -2,5 +2,5 @@ import {Players} from './../imports/api/players';
 import {Meteor} from 'meteor/meteor';
 
 Meteor.startup(() => {
-  console.log("Five of us went in... not all of us made it out.");
+  console.log("the situation was dire... decisions had to be made..");
 });

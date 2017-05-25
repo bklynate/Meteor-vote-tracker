@@ -1,6 +1,6 @@
 import React from 'react';
 import Player from './Player'
-import {Players} from './../api/players';
+import {Players, calculatePlayerPosition} from './../api/players';
 import FlipMove from 'react-flip-move';
 
 export default class PlayerList extends React.Component {
@@ -19,6 +19,8 @@ export default class PlayerList extends React.Component {
           id={player._id}
           name={player.name}
           score={player.score}
+          rank={player.rank}
+          position={player.position}
         />
         )
       })
@@ -26,10 +28,11 @@ export default class PlayerList extends React.Component {
   }
 
   render() {
-    let players = Players.find({}, { sort: {score: -1} }).fetch()
+    let players = Players.find({}, { sort: {score: -1} }).fetch();
+    let rankedPlayers = calculatePlayerPosition(players);
     return (
       <FlipMove maintainContainerHeight={true}>
-        {this.renderPlayers(players)}
+        {this.renderPlayers(rankedPlayers)}
       </FlipMove>
     )
   }

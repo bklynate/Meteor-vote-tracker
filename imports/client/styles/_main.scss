@@ -1,5 +1,13 @@
 /* SCSS declarations go here */
 
+// variables cause SCSS is dope
+$firstPlaceGreen: #e4ede0;
+$firstPlaceBorder: darken($firstPlaceGreen, 15%);
+$secondPlaceBlue: #dfe7ed;
+$secondPlaceBorder: darken($secondPlaceBlue, 15%);
+$thirdPlaceRed: #eddfdf;
+$thirdPlaceBorder: darken($thirdPlaceRed, 15%);
+
 * {
   margin: 0;
   padding: 0;

@@ -11,3 +11,16 @@
   font-weight: 300;
   text-align: center;
 }
+
+.item--position-1 {
+  background-color: $firstPlaceGreen;
+  border-color: $firstPlaceBorder;
+}
+.item--position-2 {
+  background-color: $secondPlaceBlue;
+  border-color: $secondPlaceBorder;
+}
+.item--position-3 {
+  background-color: $thirdPlaceRed;
+  border-color: $thirdPlaceBorder;
+}
